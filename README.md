@@ -130,7 +130,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 ```
 
 
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out. Initially Poppa and Smurfette will be in the array.
+- [x] Double check to make sure that a smurf is created correctly once your functionality is built out. Initially Poppa and Smurfette will be in the array.
 
 **HINT** if you are going to be working on Stretch Problem, you'll need to use that unique `id`.
 
@@ -167,6 +167,15 @@ Example of object created in Smurf DB:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. What problem does the context API help solve?
+    it helps keep your state organized and clean, especially when there are a lot of components that would otherwise need a lot of prop drilling
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+    actions - a function that returns an object that has a type and payload to tell the reducer which case to run
+    reducers - a pure function that returns new state for the application based on what the action tells it
+    store - holds ALL of the state for the application so that any component can access it
+
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+    redux-thunk is middleware that allows us to dispatch asynchronus actions (because redux is set up to run synchronously)
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+    Context API was the easiest to understand and implement, but Redux is cool and I can see how setting it up at the beginning of a project allows the project to scale to whatever size you need
