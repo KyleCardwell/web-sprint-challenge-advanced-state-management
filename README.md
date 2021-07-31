@@ -63,7 +63,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
   * [x] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.
   * [x] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
-  * [ ] Add a standard action that allows us to set the value of the error message slice of state.
+  * [x] Add a standard action that allows us to set the value of the error message slice of state.
   
 #### App.js
   Connect this component to redux **passing in your fetchSmurfs action only.** 
@@ -84,10 +84,10 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 #### components/AddForm.js
   Connect this component to redux **passing in your error message state value, setError action and addSmurf action.** Complete the form handling code.
 
-  * [ ] Connect the errorMessage, setError and addSmurf actions to the AddForm component.
-  * [ ] Replace all instances of the errorMessage static variable with your error message state value. 
-  * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
-  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+  * [x] Connect the errorMessage, setError and addSmurf actions to the AddForm component.
+  * [x] Replace all instances of the errorMessage static variable with your error message state value. 
+  * [x] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
+  * [x] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
   **Notes:**
 

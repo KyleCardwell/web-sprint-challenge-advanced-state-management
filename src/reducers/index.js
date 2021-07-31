@@ -41,10 +41,11 @@ const reducer = (state = initialState, action) => {
             }
             return({
                 ...state, 
-                smurfs: [...state.smurfs, newSmurf]
+                smurfs: [...state.smurfs, newSmurf],
+                error: ''
             })
         case (ERROR_MESSAGE):
-            return ({...state, error: action.error})
+            return ({...state, error: action.payload})
         default:
             return state;
     }
