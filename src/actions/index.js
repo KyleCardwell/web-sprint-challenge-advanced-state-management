@@ -12,15 +12,21 @@ export const fetchSmurfs = () => {
 
     return dispatch => {
         
-        dispatch(fetchSmurfsLoading)
+        dispatch(fetchSmurfsLoading())
 
-        axios.get('http://localhost:3333/smurfs')
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                console.log('Axios Error:', err)
-            })
+        setTimeout(() => {
+
+            axios.get('http://localhost:3333/smurfs')
+                .then(res => {
+                    console.log("response", res.data)
+                    dispatch(fetchSmurfsSuccess(res.data))
+                })
+                .catch(err => {
+                    console.log(err)
+                    dispatch(fetchSmurfsFailure("Somethin smurfy is goin' on"))
+                })
+
+        }, 1000)
 
             // axios.get('http://localhost:3333/smurfs')
             // .then(res => console.log(res))
@@ -29,8 +35,20 @@ export const fetchSmurfs = () => {
     }
 }
 
+export const addNewSmurf = (newSmurf) => {
+    return ({type: SMURF_ADD, payload: newSmurf})
+}
+
 export const fetchSmurfsLoading = () => {
     return ({type: SMURF_FETCH_START})
+}
+
+export const fetchSmurfsSuccess = (smurfs) => {
+    return ({type: SMURF_FETCH_SUCCESS, payload: smurfs})
+}
+
+export const fetchSmurfsFailure = (err) => {
+    return ({type: SMURF_FETCH_FAILURE, payload: err})
 }
 
 //Task List:

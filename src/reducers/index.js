@@ -6,6 +6,16 @@ export const initialState = {
     error: '',
 }
 
+let guid = () => {
+    let s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+
+    return s4() + s4() + s4() + s4() + s4()+ s4()+ s4();
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case (SMURF_FETCH_START):
@@ -14,16 +24,20 @@ const reducer = (state = initialState, action) => {
                 isLoading: true
             })
         case (SMURF_FETCH_SUCCESS):
-            return
+            return ({
+                ...state,
+                isLoading: false,
+                smurfs: action.payload
+            })
         case (SMURF_FETCH_FAILURE):
             return
         case (SMURF_ADD):
             const newSmurf = {
-                // id: action.id,
-                name: action.name,
-                nickname: action.nickname,
-                position: action.position,
-                description: action.description
+                id: guid(),
+                name: action.payload.name,
+                nickname: action.payload.nickname,
+                position: action.payload.position,
+                description: action.payload.description
             }
             return({
                 ...state, 
