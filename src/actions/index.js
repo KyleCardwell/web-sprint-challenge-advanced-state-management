@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 export const SMURF_FETCH_START = 'SMURF_START';
 export const SMURF_FETCH_SUCCESS = 'SMURF_SUCCESS';

@@ -4,8 +4,6 @@ import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
 
-import axios from 'axios';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { connect } from "react-redux";
